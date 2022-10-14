@@ -1,19 +1,21 @@
 from flask import render_template, request
 import requests
+import json
 from .forms import LoginForm, RegisterForm
 from app import app
 
-#must have route for render template!
+#must have route for index -- render_template!
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 # Get Pokemon for Pokedex
-@app.route('/pokemon', methods=['GET'])
-def pokemon():
+@app.route('/pokemon', methods=['GET', 'POST'])
+def get_pokemon():
     my_pokemon = [
         
     ]
+    # pokedex.append({"name": poke['name'], "type": poke['type'], "height": poke['height'], "weight": poke['weight'], "ability": poke['ability'], "hp": poke['hp'], "attack": poke['attack'], "defense": poke['defense']})
                                             #name in Jinja = name in python
     return render_template('pokemon.html.j2', pokemon = my_pokemon)
 
