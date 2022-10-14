@@ -4,6 +4,9 @@ import json
 from .forms import LoginForm, RegisterForm
 from app import app
 
+# known needed routes: register, login, get pokemon from api, add pokemon to local
+# table, add pokemon (from local table or api?) to current_user pokedex
+
 #must have route for index -- render_template!
 @app.route('/', methods=['GET'])
 def index():
