@@ -60,6 +60,7 @@ def login():
        
         error_string = "Incorrect Email or Password"
         return render_template('login.html.j2', loginerror=error_string, form=form)
+    
     return render_template('login.html.j2', form=form)
 
 # LOG OUT

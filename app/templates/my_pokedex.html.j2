@@ -1,0 +1,19 @@
+{# get & display My Pokemon page #}
+{% extends './base.html.j2' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/pokemon.css')}}">
+{% endblock %}
+
+{% block title %}
+    {{current_user.first_name}}'s Pokedex
+{% endblock %}
+
+{% block content %}
+    <h1>My Pokemon Team!</h1>
+    <hr>
+    {% for poke in Pokemon %}
+        <li>{{ poke | title }}</li>
+        {# {% include './includes/pokemon.html.j2' %} #}
+    {% endfor %}
+{% endblock %}

@@ -1,4 +1,7 @@
-# Flask Pokemon Project
+# Flask Pokemon Battle Project
+
+## ElephantSQL db connection string:
+postgres://fkmgombp:nec6pVq0fRHJlwJT2sIc6ildXyk4g7YJ@heffalump.db.elephantsql.com/fkmgombp
 
 ## To clone this repository:
 **From the CLI**

@@ -1,24 +1,63 @@
-{# based on "Students" html #}
+{# displaying pokemon from pokemon database to user #}
+
 
 {% extends './base.html.j2' %}
-
-{% block title %}
-    Pokemon
-{% endblock %}
 
 {% block css %}
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/pokemon.css')}}">
 {% endblock %}
 
+{% block title %}
+    Pokemon!
+{% endblock %}
+
 {% block content %}
-    <h1>Pokemon!</h1>
-    <ul>
+<h1>Pokemon!</h1>
+
+{# Where do I place this?
+"List" of Pokemon the User may search for is here https://www.pokemon.com/us/pokedex/ #}
+
+
+{# viewed the following from the class ergast.html for formatting #}
+<form action = "{{url_for('main.ergast')}}" method="POST">
+   <div class="mb-3">
+    <label for="year" class="form-label">Year</label>
+    <input type="text" class="form-control" name="year" id="year" >
+  </div>
+  <div class="mb-3">
+    <label for="round" class="form-label">Round</label>
+    <input type="number" class="form-control" name="round" id="round">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+  <small style="color:red">{{ error }}</small>
+</form>
+{% if racers %}
+    <table class="table table-striped table-hover table-dark mt-5">
+        <thead>
+            <tr>
+                <th scope="col">Position</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Win</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Nationality</th>
+                <th scope="col">Constructor</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for poke in pokemon %}
-            {# {% if poke == "" %} 
-                <li> ({{poke | title}})</li>
-            {% else %} #}
-                <li>{{ poke | title }}</li>
-            {# {% endif %} #}
-        {% endfor %}
-    </ul>
+            <tr>
+                    <th scope="row">{{ racer["position"] }}</td>
+                    <td>{{ racer.first_name }}</td>
+                    <td>{{ racer.last_name }}</td>
+                    <td>{{ racer.wins }}</td>
+                    <td>{{ racer.DOB }}</td>
+                    <td>{{ racer.nationality }}</td>
+                    <td>{{ racer.constructor }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    <table>
+{% endif %}
 {% endblock %}
