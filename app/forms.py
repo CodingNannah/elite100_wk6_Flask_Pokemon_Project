@@ -24,11 +24,11 @@ class RegisterForm(FlaskForm):
         EqualTo('password', message="Passwords Must Match")])
     submit = SubmitField('Register')
 
-    a1_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752776" height="75px">')
-    a2_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752731" height="75px">')
-    a3_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752699" height="75px">')
-    a4_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752763" height="75px">')
-    a5_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752871" height="75px">')
+    a1_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752776.png" height="75px">')
+    a2_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752731.png" height="75px">')
+    a3_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752699.png" height="75px">')
+    a4_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752763.png" height="75px">')
+    a5_img = markupsafe.Markup(f'<img src="https://www.flaticon.com/free-icon/gaming_1752871.png" height="75px">')
 
     icon = RadioField("Avatar", validators=[DataRequired()], choices = [(a1_img),(a2_img),(a3_img),(a4_img),(a5_img)])
 
