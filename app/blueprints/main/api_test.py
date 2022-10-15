@@ -1,10 +1,11 @@
 # Pulling out data for 5 different pokemon:
 # Name
 # at least one ability's name, 
-# base_experience, 
+# base_experience: for Battle Project, this becomes: hp, attack, defense
 # URL for its sprite ex.'front_shiny'
 
 import requests, json
+
 data = "https://pokeapi.co/api/v2/pokemon/"
 
 def get_poke_info(data, poke_m):
@@ -20,25 +21,27 @@ def get_poke_info(data, poke_m):
     
     response.json()    
        
-    poke_name = f"{response.json()['forms'][0]['name']}"
+    poke_name = f"{response.json()['forms'][0]['name'].title()}"
        
     pokedex[poke_name] = {
-        'name':response.json()['forms'][0]['name'],
+        'name':response.json()['name'],
         'type':response.json()['types'][0]['type']['name'],
         'height':response.json()['height'],
         'weight':response.json()['weight'],
-        'ability1':response.json()['abilities'][0]['ability']['name'],
-        'ability2':response.json()['abilities'][1]['ability']['name'],
+        'ability':response.json()['abilities'][0]['ability']['name'],
+        # 'ability2':response.json()['abilities'][1]['ability']['name'],
         'base_experience':response.json()['base_experience'],
+        'hp':response.json()['stats'][0]['base_stat'],
+        'attack':response.json()['stats'][1]['base_stat'],
+        'defense':response.json()['stats'][2]['base_stat'],
         'sprite':response.json()['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'],
         }
 
-    print(pokedex)
-
-    #return pokedex
-#     new_data.append(pokedex)
-#     return new_data
- 
+    # return pokedex
+    # print(pokedex)
+    # new_data.append(pokedex)
+    # return new_data
+    
 get_poke_info(data, "Tentacruel")
 get_poke_info(data, "Charmander") 
 get_poke_info(data, "Yanmega")
@@ -67,8 +70,8 @@ get_poke_info(data, "Escavalier")
 
 # These do not have a 2nd ability:
 
-# get_poke_info(data, "Xerneas")
-# get_poke_info(data, "Zoroark")
-# get_poke_info(data, "Celebi")
-# get_poke_info(data, "Archeops")
-# get_poke_info(data, "Zekrom")
+get_poke_info(data, "Xerneas")
+get_poke_info(data, "Zoroark")
+get_poke_info(data, "Celebi")
+get_poke_info(data, "Archeops")
+get_poke_info(data, "Zekrom")
