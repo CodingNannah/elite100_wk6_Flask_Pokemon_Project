@@ -24,6 +24,41 @@
                         <a class="nav-link" href="/battle">Battle</a>
                     </li>
                 </ul>
-            </div>      
+            </div>   
+
+            {# show user (login, register, ) on navbar code goes here: #}
+
+            <ul class="navbar-nav ms-auto align-items-center">
+                {# if not logged in #}
+                {% if current_user.is_anonymous %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('auth.login')}}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('auth.register')}}">Register</a>
+                </li>
+                {# if logged in #}
+                {% else %}
+               `    {# see icon #}
+                    <img src="{{current_user.get_icon_url()}}" style="height:50px">
+                <li>
+                    {# see edit #}
+                    <div class="row"> 
+                        <div class="col-12">
+                            <a href="{{url_for('auth.edit_profile')}}">
+                                <i class="bi bi-gear-fill"></i>
+                            </a>
+                        </div>
+                        {# see logout #}
+                        <div class="col-12">
+                            <a href="{{url_for('auth.logout')}}">
+                                <i class="bi bi-box-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>  
+
         </div>
     </nav> 

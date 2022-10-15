@@ -1,7 +1,7 @@
 from flask import render_template, request
 import requests
 import json
-from .forms import LoginForm, RegisterForm
+from .blueprints.auth.forms import LoginForm, RegisterForm
 from app import app
 
 # known needed routes: register, login, get pokemon from api, add pokemon to local

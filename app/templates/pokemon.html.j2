@@ -1,0 +1,24 @@
+{# based on "Students" html #}
+
+{% extends './base.html.j2' %}
+
+{% block title %}
+    Pokemon
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/pokemon.css')}}">
+{% endblock %}
+
+{% block content %}
+    <h1>Pokemon!</h1>
+    <ul>
+        {% for poke in pokemon %}
+            {# {% if poke == "" %} 
+                <li> ({{poke | title}})</li>
+            {% else %} #}
+                <li>{{ poke | title }}</li>
+            {# {% endif %} #}
+        {% endfor %}
+    </ul>
+{% endblock %}

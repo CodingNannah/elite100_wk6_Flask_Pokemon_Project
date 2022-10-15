@@ -1,20 +1,15 @@
-{# envision this as the get & display My Pokemon page #}
+{# get & display My Pokemon page #}
 
 {% extends './base.html.j2' %}
+
 {% block title %}
-Pokedex
+    {{current_user.first_name}}'s Pokedex
 {% endblock %}
 
-{% block css %}
-<link rel='stylesheet' href="../static/css/main.css">
+{% block content %}
+    <h1>My Pokedex</h1>
+    <hr>
+    {% for post in posts %}
+        {% include './includes/_post.html.j2' %}
+    {% endfor %}
 {% endblock %}
-
-    {% block content %}
-    <h1>My Pokedex!</h1>
-    <ul>
-        {% for poke in pokemon %}
-        {# What do I want to display as 'title'? #}
-        <li>{{ poke | title }} </li>        
-        {% endfor %}
-    </ul>
-    {% endblock %}
