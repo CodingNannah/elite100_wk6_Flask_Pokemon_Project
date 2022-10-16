@@ -30,7 +30,7 @@ def get_poke_info(data, poke_m):
         'weight':response.json()['weight'],
         'ability':response.json()['abilities'][0]['ability']['name'],
         # 'ability2':response.json()['abilities'][1]['ability']['name'],
-        'base_experience':response.json()['base_experience'],
+        # 'base_experience':response.json()['base_experience'],
         'hp':response.json()['stats'][0]['base_stat'],
         'attack':response.json()['stats'][1]['base_stat'],
         'defense':response.json()['stats'][2]['base_stat'],
