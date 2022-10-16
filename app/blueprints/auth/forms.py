@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, EmailField, PasswordField, SubmitField, RadioField
 from wtforms.validators import Email, DataRequired, EqualTo, ValidationError
-from app.models import User
+from . import User
 from jinja2.utils import markupsafe
 from app import app
 

@@ -1,3 +1,17 @@
 .container{
     margin-top: 50px;
 }
+
+body {
+    background-image: scr = "../static/images/pokemon_logo.png"
+    width = 400px; 
+    height:200px
+}
+
+nav {
+    background-color: red
+}
+
+body {
+    background-color: beige;
+}

@@ -64,7 +64,7 @@ class User(UserMixin, db.Model):
 
 #**************** Not sure if this will work:
     def get_icon(self):
-        return f"url_for./static/images/{self.icon}.png"
+        return f"./static/images/{self.icon}.png"
 
     # Check to see if the user is following another user
     def is_following(self, user_to_check):
