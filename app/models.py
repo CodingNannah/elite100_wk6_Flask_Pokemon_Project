@@ -142,7 +142,6 @@ class Pokemon(db.Model):
     attack = db.Column(db.Integer)
     defense = db.Column(db.Integer)
     sprite = db.Column(db.Integer)
-    my_pokedex = db.Column(db.Integer, db.ForeignKey('my_pokedex.id'))
 
     def __repr__(self):
         return f'<Pokemon: {self.id} | {self.body[:15]}>'

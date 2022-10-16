@@ -1,8 +1,11 @@
 Flaticon (https://www.flaticon.com/free-icons/pokemon" title="pokemon icons) 
-requires download and attribute usage of icons found on flaticon.com.
+requires download and attribute usage of icons found on flaticon.com. However, 
+they are improperly formed by the website. Hence, this attributions text file.
 
-SVG options are not available without a paid subscription. Favicon size: 32x32.
-All other sizes used are 64X64.
+SVG options are not available without a paid subscription. 
+
+Favicon size: 32x32.
+All other sizes: 64X64.
 
 Here is what was used in this project:
 
