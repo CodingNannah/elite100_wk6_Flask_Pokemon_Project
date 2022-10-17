@@ -34,7 +34,7 @@ def get_poke_info(data, poke_m):
         'hp':response.json()['stats'][0]['base_stat'],
         'attack':response.json()['stats'][1]['base_stat'],
         'defense':response.json()['stats'][2]['base_stat'],
-        'sprite':response.json()['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny'],
+        'sprite':response.json()['sprites']['versions']['generation-v']['black-white']['animated']['front_shiny']
         }
 
     # return pokedex

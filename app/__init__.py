@@ -20,7 +20,7 @@ def create_app(config_class=Config):
     moment.init_app(app)
 
     login.login_view = 'auth.login'
-    login.login_message = 'Log in to play!'
+    login.login_message = 'Log In to Play!'
     login.login_message_category = 'warning'
 
     from .blueprints.auth import bp as auth_bp
@@ -29,10 +29,12 @@ def create_app(config_class=Config):
     from .blueprints.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-    # adapt this to meet other users, like a roster of Pokemon Masters:
+    # adapt this to meet other users, like a roster of Pokemon Masters?
     from .blueprints.social import bp as social_bp
     app.register_blueprint(social_bp)
 
     return app
 
-from app import routes, models
+# these don't seem to work alone:
+from . import routes, models # having this one
+from app import routes, models # makes this on light up
