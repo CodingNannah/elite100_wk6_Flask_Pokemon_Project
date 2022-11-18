@@ -9,9 +9,14 @@ body {
 }
 
 nav {
-    background-color: red
+    background-color: #FF0000
 }
 
 body {
     background-color: beige;
 }
+
+/* https://www.schemecolor.com/pokemon-colors.php
+Pokemon Color Scheme palette has 5 colors: Red (#FF0000), 
+Boston University Red (#CC0000), Cerulean Blue (#3B4CCA), 
+Golden Yellow (#FFDE00) and Gold Foil (#B3A125) */

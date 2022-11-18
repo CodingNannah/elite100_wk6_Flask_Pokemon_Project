@@ -1,3 +1,41 @@
 {# mini bio and help for the program here #}
-{# add this to a logged in current user page #}
+{# connect this to a logged in current user page #}
 {% extends './base.html.j2' %}
+
+{% block content %}
+    <h3>So, you need some help?</h3>
+    
+    <p>
+    You may have stumbled upon this project and don't realize how to use it. 
+    Or, something may have broken and needs fixing.
+    Or, you really want a specific Pokemon to show up, and it isn't.
+    </p>
+
+    <h5> Getting Started</h5>
+    <p>
+    If you found this game on the web, you DO NOT need the following:
+
+    It's assumed that you've already cloned this repository. To load requirements,
+    which are listed in requirements.txt:
+    Open your terminal/cli/command line.
+    Run pip install -r requirements.txt in your Terminal.
+    That should open the project in a web browser at http://127.0.0.1:5500/.
+    
+    Happy playing!
+    </p>
+
+    <h5>Everything  Else</h5>
+
+    <p>
+    Contact Diana at codingnannah@gmail.com. 
+    Be sure to include: 
+    Your name,
+    What the issue is,
+    The result you would like to see/experience, and
+    Anything else that would be useful to the further development of this project.
+    
+    Thanks for visiting and for taking the time to contact us!
+     </p>
+    
+
+{% endblock %}
